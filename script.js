@@ -1,5 +1,5 @@
 // Quiz questions Array
-var quizQuestions = [
+let quizQuestions = [
     {
     questions: "Commonly used data types DO NOT include:",
     options: ["strings", "booleans", "alerts", "numbers"],
@@ -29,7 +29,19 @@ var quizQuestions = [
 ];
 
 // Define Initial Variables
-var score = 0;
-var questionIndex = 0;
-var quizTime = 90;
+let counter = 0;
+let timeHold = 0;
+let score = 0;
+let questionIndex = 0;
+let quizTime = 90;
+let acceptingAnswers = false;
 
+// Select Start Button and Timer
+let timer = document.querySelector("#timer");
+let quizOptions = document.querySelector("#qOptions");
+
+let quizStart = document.querySelector("#start-quiz");
+
+quizStart.addEventListener("click", function(){
+
+});

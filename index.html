@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+    <div id="timer"></div>
     <header>
-        <div>
-        <h1>Timed Coding Quiz</h1>
-        <button id="start-quiz">Start Quiz</button>
+    <div class= "container">
+        <div id="base" class="flex-center flex-column">
+            <h1>Timed Coding Quiz</h1>
+            <button id="start-quiz">Start Quiz</button>
         </div>
+    </div>
+    <div id="quizQ">
+        <p class="info-text">
+        Answer the questions before the 90 second timer ends. Incorrect answers will deduct 10 seconds for each one. GOOD LUCK!
+        </p>
+        <br />
+        <ul id="qOptions"></ul>
+    </div>
     </header>
     <main>
         
