@@ -36,10 +36,9 @@ let questionIndex = 0;
 let quizTime = 90;
 let acceptingAnswers = false;
 
-// Select Start Button and Timer
+// Select Start Button, Timer and Quiz Options
 let timer = document.querySelector("#timer");
 let quizOptions = document.querySelector("#qOptions");
-
 let quizStart = document.querySelector("#start-quiz");
 
 quizStart.addEventListener("click", function(){
