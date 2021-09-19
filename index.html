@@ -5,28 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timed Quiz</title>
+    <!-- Bootstrap CDN and Custom CSS Links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <div id="timer"></div>
-    <header>
+    <!-- Timer -->
+    <div class="row">
+    <div class= "col-12" id="timer">Click "Start Quiz To Begin Timer</div>
+    </div>
+    
+   
+
+<header>
     <div class= "container">
         <div id="base" class="flex-center flex-column">
             <h1>Timed Coding Quiz</h1>
             <button id="start-quiz">Start Quiz</button>
         </div>
-    </div>
+        </div>
+</header>
     <div id="quizQ">
-        <p class="info-text">
+        <p class="info-text col-12 text-center">
         Answer the questions before the 90 second timer ends. Incorrect answers will deduct 10 seconds for each one. GOOD LUCK!
         </p>
         <br />
         <ul id="qOptions"></ul>
     </div>
-    </header>
-    <main>
-        
-    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+
     
 </body>
 </html>

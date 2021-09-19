@@ -9,9 +9,15 @@
     margin: 0;
     padding: 0;
     color: green;
+    background: #eee;
 }
 header {
     text-align: center;
+}
+
+.spacer {
+    margin-bottom: 20px;
+    background: #eee;
 }
 
 button {
@@ -21,4 +27,11 @@ button {
 #start-quiz {
     background-color: lightpink;
     font-weight: bold;
+}
+
+#timer {
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: right;
 }

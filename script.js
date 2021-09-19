@@ -33,14 +33,32 @@ let counter = 0;
 let timeHold = 0;
 let score = 0;
 let questionIndex = 0;
-let quizTime = 90;
+let quizTime = 120;
 let acceptingAnswers = false;
 
-// Select Start Button, Timer and Quiz Options
+// In Page Objects
 let timer = document.querySelector("#timer");
 let quizOptions = document.querySelector("#qOptions");
 let quizStart = document.querySelector("#start-quiz");
+let mainPage = document.querySelector("#quizQ");
+let headings = document.querySelector(".container");
 
 quizStart.addEventListener("click", function(){
+
+// Clear Page when 'Start Quiz' button is clicked
+    mainPage.innerHTML = "";
+    headings.innerHTML = "";
+
+// Start Timer
+
+var timerBegin = setInterval(function(){ 
+    timer.innerHTML = quizTime;
+    quizTime--;
+    if (quizTime === -1) {
+        clearInterval(timerBegin);
+        alert("You are out of time!");
+    }
+
+}, 1000);
 
 });
