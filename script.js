@@ -43,6 +43,7 @@ let quizStart = document.querySelector("#start-quiz");
 let mainPage = document.querySelector("#quizQ");
 let headings = document.querySelector(".container");
 
+// Event listener on Start Quiz Button
 quizStart.addEventListener("click", function(){
 
 // Clear Page when 'Start Quiz' button is clicked
@@ -50,7 +51,6 @@ quizStart.addEventListener("click", function(){
     headings.innerHTML = "";
 
 // Start Timer
-
 var timerBegin = setInterval(function(){ 
     timer.innerHTML = quizTime;
     quizTime--;
