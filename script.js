@@ -38,17 +38,24 @@ let acceptingAnswers = false;
 
 // In Page Objects
 let timer = document.querySelector("#timer");
-let quizOptions = document.querySelector("#qOptions");
+let quizOptions = document.querySelector("#question-container");
 let quizStart = document.querySelector("#start-quiz");
-let mainPage = document.querySelector("#quizQ");
+let mainPage = document.querySelector("#main-page");
 let headings = document.querySelector(".container");
+let answer1 = document.querySelector("#btn-1");
+let answer2 = document.querySelector("#btn-2");
+let answer3 = document.querySelector("#btn-3");
+let answer4 = document.querySelector("#btn-4");
+let questionEl = document.getElementById("question-box");
+let answerButtonElement = document.getElementById("answer-buttons");
 
 // Event listener on Start Quiz Button
-quizStart.addEventListener("click", function(){
+quizStart.addEventListener("click", function() {
 
 // Clear Page when 'Start Quiz' button is clicked
     mainPage.innerHTML = "";
     headings.innerHTML = "";
+    questionIndex = 0;
 
 // Start Timer
 var timerBegin = setInterval(function(){ 
@@ -61,4 +68,17 @@ var timerBegin = setInterval(function(){
 
 }, 1000);
 
+setNextQuestion()
+
 });
+
+var setNextQuestion = function() {
+    showQuestions(quizQuestions[questionIndex])
+}
+
+var showQuestions = function(quizQuestions) {
+    questionEl.innerHTML = quizQuestions.questions;
+}
+var selectAnswer = function() {
+
+}
