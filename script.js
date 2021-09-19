@@ -1,30 +1,49 @@
 // Quiz questions Array
 let quizQuestions = [
     {
-    questions: "Commonly used data types DO NOT include:",
-    options: ["strings", "booleans", "alerts", "numbers"],
-    answer: "alets"
+    question: "Commonly used data types DO NOT include:",
+    options: [
+        {text: "strings", correct: false},
+        {text: "booleans", correct: false},
+        {text: "alerts", correct: true},
+        {text: "numbers", correct: false}
+    ]
+},
+{
+    question: "The condition in an if / else statement is enclosed within ____.",
+    options: [
+        {text: "quotes", correct: false},
+        {text: "curly brackets", correct: true},
+        {text: "parentheses", correct: false},
+        {text: "square brackets", correct: false}
+    ]
     },
     {
-    questions: "The condition in an if / else statement is enclosed within ____.",
-    options: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    answer: "curly brackets"
+    question: "Arrays in Javascript can be used to store ____.",
+    options: [
+        {text: "numbers & strings", correct: false},
+        {text: "other arrays", correct: false},
+        {text: "booleans", correct: false},
+        {text: "All of the above", correct: true}
+    ]
     },
     {
-    questions: "Arrays in Javascript can be used to store ____.",
-    options: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-    answer: "all of the above"
+    question: "String values must be enclosed within ____ when being assigned to variables.",
+    options: [
+        {text: "commas", correct: false},
+        {text: "curly brackets", correct: false},
+        {text: "quotes", correct: true},
+        {text: "parentheses", correct: false}
+    ]
     },
     {
-    questions: "String values must be enclosed within ____ when being assigned to variables.",
-    options: ["commas", "curly brackets", "quotes", "parentheses"],
-    answer: "quotes"
-    },
-    {
-    questions: "A very useful tool for used during development and debugging for printing content to the debugger is:",
-    options: ["javascript", "terminal/bash", "for loops", "console log"],
-    answer: "console log"
-    },
+    question: "A very useful tool for used during development and debugging for printing content to the debugger is:",
+    options: [
+        {text: "javascript", correct: false},
+        {text: "terminal/bash", correct: false},
+        {text: "for loops", correct: false},
+        {text: "console log", correct: true}
+    ]
 
 ];
 
@@ -81,25 +100,36 @@ var showQuestions = function(quizQuestions) {
     reset();
 // Clear Original Quiz Box
     questionEl.innerHTML = quizQuestions.questions;
+// Create New buttons and append to the page
     quizQuestions.options.forEach(options => {
         const button = document.createElement("button")
         button.innerText = options;
         button.classList.add("btn")
         button.classList.add("btn-primary")
-        if (options.correct) {
-            button.dataset.correct = options.correct
+        if (options.answer) {
+            button.dataset.answer = options.answer
         }
         button.addEventListener("click", selectAnswer)
         answerButtonElement.append(button)
     })
    
 }
-
+// Reset Page to prep for the Quiz
 var reset = function () {
+    quizStart.classList.add("hide")
     while (answerButtonElement.firstChild) {
         answerButtonElement.removeChild(answerButtonElement.firstChild)
     };
 } 
 var selectAnswer = function(event) {
+    var answerChoice = event.target
+    console.log(answerChoice)
+}
 
+var setStatusClass = function() {
+    
+    
+}
+
+var clearStatusClass = function() {
 }
