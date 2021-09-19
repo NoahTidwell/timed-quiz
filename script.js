@@ -40,6 +40,7 @@ let acceptingAnswers = false;
 let timer = document.querySelector("#timer");
 let quizOptions = document.querySelector("#question-container");
 let quizStart = document.querySelector("#start-quiz");
+let nextQuestion = document.querySelector("next-btn");
 let mainPage = document.querySelector("#main-page");
 let headings = document.querySelector(".container");
 let answer1 = document.querySelector("#btn-1");
@@ -77,8 +78,28 @@ var setNextQuestion = function() {
 }
 
 var showQuestions = function(quizQuestions) {
+    reset();
+// Clear Original Quiz Box
     questionEl.innerHTML = quizQuestions.questions;
+    quizQuestions.options.forEach(options => {
+        const button = document.createElement("button")
+        button.innerText = options;
+        button.classList.add("btn")
+        button.classList.add("btn-primary")
+        if (options.correct) {
+            button.dataset.correct = options.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerButtonElement.append(button)
+    })
+   
 }
-var selectAnswer = function() {
+
+var reset = function () {
+    while (answerButtonElement.firstChild) {
+        answerButtonElement.removeChild(answerButtonElement.firstChild)
+    };
+} 
+var selectAnswer = function(event) {
 
 }

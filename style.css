@@ -100,3 +100,7 @@ main.wrong {
 #score {
     color: mediumseagreen;
 }
+
+.hide {
+    display: none;
+}
