@@ -1,16 +1,48 @@
 :root {
     font-size: 18px;
+    --color-neutral: 200;
+    --color-wrong: 0;
+    --color-correct: 145;
 }
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     font-family: monospace;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 auto;
     color: green;
 }
 header {
     text-align: center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: navy;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --hue: var(--color-neutral);
+}
+
+main.correct {
+    --hue: var(--color-correct);
+}
+
+main.wrong {
+    --hue: var(--color-wrong);
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: beige;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 button {
@@ -22,9 +54,13 @@ button {
     font-weight: bold;
 }
 
-#timer {
+#timer, #score {
     color: red;
     font-weight: bold;
     font-size: 24px;
     text-align: right;
+}
+
+#score {
+    color: mediumseagreen;
 }
