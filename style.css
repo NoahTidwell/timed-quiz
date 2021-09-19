@@ -1,8 +1,8 @@
 :root {
     font-size: 18px;
-    --color-neutral: 200;
-    --color-wrong: 0;
-    --color-correct: 145;
+    --hue-neutral: 400;
+    --hue-wrong: 0;
+    --hue-correct: 145;
 }
 
 *, *::before, *::after {
@@ -26,15 +26,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    --hue: var(--color-neutral);
+    --hue: var(--hue-neutral);
 }
 
 main.correct {
-    --hue: var(--color-correct);
+    --hue: var(--hue-correct);
 }
 
 main.wrong {
-    --hue: var(--color-wrong);
+    --hue: var(--hue-wrong);
 }
 
 .container {
@@ -43,16 +43,47 @@ main.wrong {
     background-color: beige;
     border-radius: 5px;
     padding: 10px;
+    box-shadow: 0 0 10px 2px white;
 }
 
-button {
-    margin: 5px;
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100px, 50%);
+    border: 2px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 5px 10px;
 }
 
 #start-quiz {
-    background-color: lightpink;
+    background-color: turquoise;
     font-weight: bold;
 }
+
 
 #timer, #score {
     color: red;

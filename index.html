@@ -12,8 +12,8 @@
 <body>
     <!-- Timer -->
     <div class="row">
-    <div class= "col-12" id="timer">Click "Start Quiz To Begin Timer</div>
-    <div class= "col-1" id="score">0</div>
+    <div class= "col-12 text-center" id="timer">Click "Start Quiz To Begin Timer</div>
+    <div class= "col-12 text-center" id="score">0</div>
     </div>
     
    
@@ -23,7 +23,6 @@
     <div class= "container">
         <div id="base" class="flex-center flex-column">
             <h1>Timed Coding Quiz</h1>
-            <button id="start-quiz">Start Quiz</button>
             <p class="info-text col-12 text-center">
                 Answer the questions before the 120 second timer ends. Incorrect answers will deduct 10 seconds for each one. GOOD LUCK!
                 </p>
@@ -37,15 +36,18 @@
     </div>
     <main>
         <div class="container">
-            <div id="question-container" class="col-4 text-center hide">
+            <div id="question-container" class="col-12 text-center hide">
                 <div id="question-buttons">Questions</div>
+                <div class="btn-grid">
                 <button id="btn-1" class="btn btn-primary">Answer 1</button>
                 <button id="btn-2" class="btn btn-primary">Answer 2</button>
                 <button id="btn-3" class="btn btn-primary">Answer 3</button>
                 <button id="btn-4" class="btn btn-primary">Answer 4</button>
+                </div>
             </div>
         
         <div class="control-buttons">
+            <button id="start-quiz" class="next-btn btn-secondary btn hide">Start Quiz</button>
             <button id="next-btn" class="next-btn btn-secondary btn hide">Next</button>
         </div>
     </div>
