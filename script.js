@@ -106,7 +106,6 @@ var showQuestions = function(quizQuestions) {
         const button = document.createElement("button")
         button.innerText = option.text;
         button.classList.add("btn")
-        button.classList.add("btn-primary")
         if (option.correct) {
             button.dataset.correct = option.correct
         }
@@ -127,7 +126,7 @@ var selectAnswer = function(event) {
     const correct = answerChoice.dataset.correct 
     setStatusClass(document.body, correct)
     Array.from(answerButtonElement.children).forEach(button => {
-        setStatusClass(button.dataset.correct)
+        setStatusClass(button, button.dataset.correct)
     })
 }
 
