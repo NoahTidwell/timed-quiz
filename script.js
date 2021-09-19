@@ -49,7 +49,6 @@ let quizQuestions = [
 ]
 
 // Define Initial Variables
-let counter = 0;
 let timeHold = 0;
 let score = 0;
 let questionIndex = 0;
@@ -58,6 +57,7 @@ let acceptingAnswers = false;
 
 // In Page Objects
 let timer = document.querySelector("#timer");
+let counter = document.getElementById("score");
 let questionContainerElement = document.querySelector("#question-container");
 let quizStart = document.getElementById("start-quiz");
 let nextQuestion = document.getElementById("next-btn");
@@ -131,10 +131,16 @@ var clear = function () {
 var selectAnswer = function(event) {
     var answerChoice = event.target
     const correct = answerChoice.dataset.correct 
-    setStatusClass(document.body, correct)
     Array.from(answerButtonElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (quizQuestions.length >  questionIndex + 1) {
+}
+else {
+    quizStart.innerHTML = "Restart"
+    quizStart.classList.remove("hide");
+    nextQuestion.classList.add("hide");
+}
 }
 var setStatusClass = function(element, correct) {
     clearStatusClass(element)
