@@ -59,8 +59,8 @@ let acceptingAnswers = false;
 // In Page Objects
 let timer = document.querySelector("#timer");
 let questionContainerElement = document.querySelector("#question-container");
-let quizStart = document.querySelector("#start-quiz");
-let nextQuestion = document.querySelector("next-btn");
+let quizStart = document.getElementById("start-quiz");
+let nextQuestion = document.getElementById("next-btn");
 let mainPage = document.querySelector("#main-page");
 let headings = document.querySelector(".container");
 let answer1 = document.querySelector("#btn-1");
@@ -92,6 +92,13 @@ var timerBegin = setInterval(function(){
 setNextQuestion()
 
 });
+
+// next button
+
+nextQuestion.addEventListener("click", function () {
+    questionIndex++
+    setNextQuestion();
+})
 
 var setNextQuestion = function() {
     showQuestions(quizQuestions[questionIndex])
@@ -129,7 +136,6 @@ var selectAnswer = function(event) {
         setStatusClass(button, button.dataset.correct)
     })
 }
-
 var setStatusClass = function(element, correct) {
     clearStatusClass(element)
     if(correct) {
@@ -144,3 +150,4 @@ var clearStatusClass = function(element) {
     element.classList.remove("correct")
     element.classList.remove("wrong");
 }
+
