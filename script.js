@@ -77,6 +77,7 @@ quizStart.addEventListener("click", function() {
     mainPage.innerHTML = "";
     headings.innerHTML = "";
     questionIndex = 0;
+    counter = score;
 
 // Start Timer
 var timerBegin = setInterval(function(){ 
@@ -134,14 +135,21 @@ var selectAnswer = function(event) {
     Array.from(answerButtonElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+
+    // IF statement to display Restart Quiz after all the questions have been displayed.
     if (quizQuestions.length >  questionIndex + 1) {
 }
 else {
     quizStart.innerHTML = "Restart"
     quizStart.classList.remove("hide");
     nextQuestion.classList.add("hide");
+quizStart.addEventListener("click", () => {
+    clear();
+        });
+    }
 }
-}
+
+// Set Correct and Wrong class to elements
 var setStatusClass = function(element, correct) {
     clearStatusClass(element)
     if(correct) {
@@ -151,9 +159,8 @@ var setStatusClass = function(element, correct) {
     }
     
 }
-
+// clear class from elements
 var clearStatusClass = function(element) {
     element.classList.remove("correct")
     element.classList.remove("wrong");
 }
-
