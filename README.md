@@ -5,7 +5,7 @@ This is a timed coding quiz over Javascript. When the user selects START QUIZ th
 
 ## Mock Up
 
-<img href="./assets/mock-up.png">
+<img src="./assets/mock-up.png"></img>
 
 ## Contributors
 Noah Tidwell
